@@ -23,11 +23,11 @@ interface MenuSection {
 const menuItems: Record<string, MenuSection> = {
   "Who We Are": {
     items: [
-      { title: "About", link: "#" },
-      { title: "Our Story", link: "#" },
-      { title: "Board of Directors", link: "#" },
-      { title: "Executive Leadership", link: "#" },
-      { title: "Administration Team", link: "#" }
+      { title: "About", link: "/about" },
+      { title: "Our Story", link: "/our-story" },
+      { title: "Board of Directors", link: "/board-of-directors" },
+      { title: "Executive Leadership", link: "/executive-leadership" },
+      { title: "Administration Team", link: "/administration-team" }
     ]
   },
   "What We Do": {
@@ -48,7 +48,7 @@ const menuItems: Record<string, MenuSection> = {
           { title: "ATIGS Soiree", link: "#" }
         ]
       },
-      { title: "Success Stories", link: "#" },
+      { title: "Success Stories", link: "/success-stories" },
       { title: "Annual Reports", link: "#" }
     ]
   },

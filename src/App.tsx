@@ -17,15 +17,21 @@ import { OurBrand } from "./sections/OurBrand";
 import { MembershipPlans } from "./sections/MembershipPlans";
 import { Membership } from './pages/Membership';
 import { MembershipPlansPage } from './pages/MembershipPlans';
+import { SuccessStories } from './pages/SuccessStories';
+import { About } from './pages/About';
+import { OurStory } from './pages/OurStory';
+import { BoardOfDirectors } from './pages/BoardOfDirectors';
+import { ExecutiveLeadership } from './pages/ExecutiveLeadership';
+import { AdministrationTeam } from './pages/AdministrationTeam';
 
 function HomePage() {
   return (
     <>
       <Hero />
-      <Stats />
       <Services />
       <MembershipBenefits />
       <MarketInsights />
+      <Stats />
       <EventsCalendar />
       <NewsEvents />
       <Newsletter />
@@ -43,6 +49,12 @@ function App() {
           <Route path="/" element={<HomePage />} />
           <Route path="/membership" element={<Membership />} />
           <Route path="/membership-plans" element={<MembershipPlansPage />} />
+          <Route path="/success-stories" element={<SuccessStories />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/our-story" element={<OurStory />} />
+          <Route path="/board-of-directors" element={<BoardOfDirectors />} />
+          <Route path="/executive-leadership" element={<ExecutiveLeadership />} />
+          <Route path="/administration-team" element={<AdministrationTeam />} />
         </Routes>
         <Footer />
       </div>
