@@ -1,6 +1,7 @@
 // src/sections/Hero.tsx
 import { motion } from "framer-motion";
 import { FiChevronsDown } from "react-icons/fi";
+import { Link } from "react-router-dom";
 
 export function Hero() {
   const scrollToFooter = () => {
@@ -35,6 +36,8 @@ export function Hero() {
               >
                 Become a Member
               </motion.button>
+
+              <Link to="/globe">
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
@@ -42,6 +45,7 @@ export function Hero() {
               >
                 Learn More
               </motion.button>
+              </Link>
             </div>
 
             {/* Scroll to Footer Button */}
@@ -83,6 +87,7 @@ export function Hero() {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
             className="relative h-[330px] w-full lg:w-[90%] mx-auto"
+           
           >
             <img
               src="https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg?auto=compress&cs=tinysrgb&w=1600"
@@ -93,8 +98,11 @@ export function Hero() {
                 filter: 'brightness(1.1) contrast(1.2) saturate(1.1)'
               }}
             />
+        
+          
             <div className="absolute inset-0 bg-gradient-to-tr from-[#1a365d]/5 to-transparent rounded-2xl" />
           </motion.div>
+        
         </div>
 
         {/* Stats Section */}

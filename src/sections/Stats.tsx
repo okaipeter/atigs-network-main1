@@ -1,15 +1,22 @@
 import { motion } from "framer-motion";
+import amen from "../assets/partners/amen.jpeg";
+import asian from "../assets/partners/asian.jpeg";
+import asoko from "../assets/partners/asoko.jpeg";
+import varanda from "../assets/partners/varanda.png";
+import velocity from "../assets/partners/velocity.jpg";
+
 
 export function Stats() {
   const brandLogos = [
-    { name: "Brand 1", image: "/logos/brand1.png" },
-    { name: "Brand 2", image: "/logos/brand2.png" },
-    { name: "Brand 3", image: "/logos/brand3.png" },
-    { name: "Brand 4", image: "/logos/brand4.png" },
-    { name: "Brand 5", image: "/logos/brand5.png" },
-    { name: "Brand 6", image: "/logos/brand6.png" },
-    { name: "Brand 7", image: "/logos/brand7.png" },
-    { name: "Brand 8", image: "/logos/brand8.png" },
+    { name: "Amen Africa", image: amen },
+    { name: "Asian", image: asian },
+    { name: "Asoko", image: asoko },
+    { name: "Varanda", image: varanda },
+    { name: "Velocity", image: velocity}
+    // { name: "Brand 5", image: "/logos/brand5.png" },
+    // { name: "Brand 6", image: "/logos/brand6.png" },
+    // { name: "Brand 7", image: "/logos/brand7.png" },
+    // { name: "Brand 8", image: "/logos/brand8.png" },
   ];
 
   return (
@@ -23,7 +30,7 @@ export function Stats() {
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-5xl font-bold text-[#1a365d] mb-4">
-            Our Brand Logos
+            Our Partners
           </h2>
           <p className="text-gray-600 text-lg">
             Trusted by leading companies worldwide
@@ -44,7 +51,7 @@ export function Stats() {
               <img
                 src={brand.image}
                 alt={brand.name}
-                className="h-12 w-auto object-contain opacity-70 group-hover:opacity-100 transition-all duration-300"
+                className="h-15  object-fill opacity-70 group-hover:opacity-100 transition-all duration-300"
               />
             </motion.div>
           ))}
