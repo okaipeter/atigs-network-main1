@@ -23,6 +23,13 @@ import { OurStory } from './pages/OurStory';
 import { BoardOfDirectors } from './pages/BoardOfDirectors';
 import { ExecutiveLeadership } from './pages/ExecutiveLeadership';
 import { AdministrationTeam } from './pages/AdministrationTeam';
+import { Portfolio } from './pages/Portfolio';
+import { AtigsSummit } from './pages/initiatives/AtigsSummit';
+import { AtigsAwards } from './pages/initiatives/AtigsAwards';
+import { AtigsTradeShow } from './pages/initiatives/AtigsTradeShow';
+import { AtigsDealRoom } from './pages/initiatives/AtigsDealRoom';
+import { AtigsInvestorsSummit } from './pages/initiatives/AtigsInvestorsSummit';
+import { AtigsDealMarketplace } from './pages/initiatives/AtigsDealMarketplace';
 
 function HomePage() {
   return (
@@ -56,6 +63,13 @@ function App() {
           <Route path="/board-of-directors" element={<BoardOfDirectors />} />
           <Route path="/executive-leadership" element={<ExecutiveLeadership />} />
           <Route path="/administration-team" element={<AdministrationTeam />} />
+          <Route path="/portfolio" element={<Portfolio />} />
+          <Route path="/initiatives/atigs-summit" element={<AtigsSummit />} />
+          <Route path="/initiatives/atigs-awards" element={<AtigsAwards />} />
+          <Route path="/initiatives/atigs-trade-show" element={<AtigsTradeShow />} />
+          <Route path="/initiatives/atigs-deal-room" element={<AtigsDealRoom />} />
+          <Route path="/initiatives/investors-summit" element={<AtigsInvestorsSummit />} />
+          <Route path="/initiatives/deal-marketplace" element={<AtigsDealMarketplace />} />
         </Routes>
         <Footer />
       </div>

@@ -32,24 +32,26 @@ const menuItems: Record<string, MenuSection> = {
   },
   "What We Do": {
     items: [
-      { title: "Our Purpose", link: "#" },
-      { title: "Our Work", link: "#" },
+      { title: "Our Purpose", link: "/purpose" },
+      { title: "Our Work", link: "/work" },
       { 
         title: "Our Portfolio of Initiatives",
         items: [
-          { title: "ATIGS Summit", link: "#" },
-          { title: "ATIGS Awards Ceremony", link: "#" },
-          { title: "ATIGS Investors Summit", link: "#" },
-          { title: "ATIGS Deal Marketplace", link: "#" },
-          { title: "ATIGS Business Club", link: "#" },
-          { title: "The ATIGS Times", link: "#" },
-          { title: "ATIGS FDI Shark Tank", link: "#" },
-          { title: "ATIGS Advantage Seminar", link: "#" },
-          { title: "ATIGS Soiree", link: "#" }
+          { title: "ATIGS Summit", link: "/initiatives/atigs-summit" },
+          { title: "ATIGS Awards Ceremony", link: "/initiatives/atigs-awards" },
+          { title: "ATIGS Global Trade Show", link: "/initiatives/atigs-trade-show" },
+          { title: "ATIGS Deal Room", link: "/initiatives/atigs-deal-room" },
+          { title: "ATIGS Investors Summit", link: "/initiatives/investors-summit" },
+          { title: "ATIGS Deal Marketplace", link: "/initiatives/deal-marketplace" },
+          { title: "ATIGS Business Club", link: "/initiatives/business-club" },
+          { title: "The ATIGS Times", link: "/initiatives/times" },
+          { title: "ATIGS FDI Shark Tank", link: "/initiatives/shark-tank" },
+          { title: "ATIGS Advantage Seminar", link: "/initiatives/advantage-seminar" },
+          { title: "ATIGS Soiree", link: "/initiatives/soiree" }
         ]
       },
       { title: "Success Stories", link: "/success-stories" },
-      { title: "Annual Reports", link: "#" }
+      { title: "Annual Reports", link: "/reports" }
     ]
   },
   "How We Help": {
@@ -90,14 +92,14 @@ export function Navbar() {
         <div className="container mx-auto px-4">
           <div className="flex justify-between items-center h-20">
             {/* Logo */}
-            <a href="/" className="flex items-center mr-8">
+            <Link to="/" className="flex items-center mr-8">
               <img 
                 src={logo} 
                 alt="Trade Council Logo" 
                 className="h-20 w-auto object-contain hover:opacity-90 transition-opacity"
                 style={{ minWidth: '160px', maxWidth: '200px' }}
               />
-            </a>
+            </Link>
 
             {/* Desktop Menu */}
             <div className="hidden lg:flex items-center space-x-8">
@@ -127,13 +129,13 @@ export function Navbar() {
                       >
                         {items.map((item, idx) => (
                           typeof item === 'string' ? (
-                            <a
+                            <Link
                               key={idx}
-                              href="#"
+                              to="#"
                               className="block px-8 py-3 text-gray-700 hover:bg-[#1a365d] hover:text-white transition-colors text-base"
                             >
                               {item}
-                            </a>
+                            </Link>
                           ) : (
                             <div
                               key={idx}
@@ -144,13 +146,13 @@ export function Navbar() {
                               }}
                               onMouseLeave={() => setActiveSubMenu(null)}
                             >
-                              <a
-                                href={item.link}
+                              <Link
+                                to={item.link || "#"}
                                 className="block px-8 py-3 text-gray-700 hover:bg-[#1a365d] hover:text-white transition-colors text-base flex items-center justify-between"
                               >
                                 {item.title}
                                 {item.items && <FiChevronRight className="w-4 h-4" />}
-                              </a>
+                              </Link>
                               {item.items && activeSubMenu === item.title && (
                                 <motion.div
                                   initial={{ opacity: 0, x: 10 }}
@@ -159,13 +161,13 @@ export function Navbar() {
                                   className="absolute left-full top-0 w-72 bg-white rounded-lg shadow-xl py-3"
                                 >
                                   {item.items.map((subItem, subIdx) => (
-                                    <a
+                                    <Link
                                       key={subIdx}
-                                      href={subItem.link}
+                                      to={subItem.link}
                                       className="block px-8 py-3 text-gray-700 hover:bg-[#1a365d] hover:text-white transition-colors text-base"
                                     >
                                       {subItem.title}
-                                    </a>
+                                    </Link>
                                   ))}
                                 </motion.div>
                               )}
