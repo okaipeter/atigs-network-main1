@@ -38,7 +38,7 @@ export function Contact() {
     {
       icon: <FiMapPin className="w-6 h-6" />,
       title: "Our Location",
-      details: ["123 Trade Avenue", "Business District", "New York, NY 10001"]
+      details: ["Accra ", "Business District", "Ghana Col, Gw0--220-22"]
     },
     {
       icon: <FiMail className="w-6 h-6" />,
