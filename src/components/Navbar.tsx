@@ -1,18 +1,56 @@
-// import { ShiftingDropDown } from "./Navdropdown";
-import { FiSearch } from 'react-icons/fi';
+import { FiSearch, FiChevronDown, FiChevronRight, FiMenu, FiX } from 'react-icons/fi';
 import logo from '../assets/logo_trans.png';
 import 'animate.css';
 import { motion, AnimatePresence } from "framer-motion";
-import { FiChevronDown, FiMenu, FiX } from "react-icons/fi";
 import { useState } from "react";
 import { Link } from 'react-router-dom';
 
-const menuItems = {
+interface SubMenuItem {
+  title: string;
+  link: string;
+}
+
+interface MenuItem {
+  title: string;
+  link?: string;
+  items?: SubMenuItem[];
+}
+
+interface MenuSection {
+  items: (string | MenuItem)[];
+}
+
+const menuItems: Record<string, MenuSection> = {
   "Who We Are": {
-    items: ["About Us", "Our Mission", "Leadership Team", "Board of Directors"]
+    items: [
+      { title: "About", link: "/about" },
+      { title: "Our Story", link: "/our-story" },
+      { title: "Board of Directors", link: "/board-of-directors" },
+      { title: "Executive Leadership", link: "/executive-leadership" },
+      { title: "Administration Team", link: "/administration-team" }
+    ]
   },
   "What We Do": {
-    items: ["Our Work", "Success Stories", "Annual Reports"]
+    items: [
+      { title: "Our Purpose", link: "#" },
+      { title: "Our Work", link: "#" },
+      { 
+        title: "Our Portfolio of Initiatives",
+        items: [
+          { title: "ATIGS Summit", link: "#" },
+          { title: "ATIGS Awards Ceremony", link: "#" },
+          { title: "ATIGS Investors Summit", link: "#" },
+          { title: "ATIGS Deal Marketplace", link: "#" },
+          { title: "ATIGS Business Club", link: "#" },
+          { title: "The ATIGS Times", link: "#" },
+          { title: "ATIGS FDI Shark Tank", link: "#" },
+          { title: "ATIGS Advantage Seminar", link: "#" },
+          { title: "ATIGS Soiree", link: "#" }
+        ]
+      },
+      { title: "Success Stories", link: "/success-stories" },
+      { title: "Annual Reports", link: "#" }
+    ]
   },
   "How We Help": {
     items: ["Trade Services", "Market Access", "Business Development", "Training & Events"]
@@ -31,6 +69,7 @@ const menuItems = {
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
+  const [activeSubMenu, setActiveSubMenu] = useState<string | null>(null);
 
   const handleMouseEnter = (menu: string) => {
     setActiveDropdown(menu);
@@ -38,14 +77,11 @@ export function Navbar() {
 
   const handleMouseLeave = () => {
     setActiveDropdown(null);
+    setActiveSubMenu(null);
   };
 
-  const handleScrollToMembershipPlans = () => {
-    const membershipPlansSection = document.getElementById('membership-plans');
-    if (membershipPlansSection) {
-      membershipPlansSection.scrollIntoView({ behavior: 'smooth' });
-      setIsOpen(false); // Close mobile menu if open
-    }
+  const isMenuItem = (item: string | MenuItem): item is MenuItem => {
+    return typeof item !== 'string' && 'title' in item;
   };
 
   return (
@@ -89,14 +125,52 @@ export function Navbar() {
                         transition={{ duration: 0.2 }}
                         className="absolute left-0 mt-2 w-72 bg-white rounded-lg shadow-xl py-3"
                       >
-                        {items.map((item) => (
-                          <a
-                            key={item}
-                            href="#"
-                            className="block px-8 py-3 text-gray-700 hover:bg-[#1a365d] hover:text-white transition-colors text-base"
-                          >
-                            {item}
-                          </a>
+                        {items.map((item, idx) => (
+                          typeof item === 'string' ? (
+                            <a
+                              key={idx}
+                              href="#"
+                              className="block px-8 py-3 text-gray-700 hover:bg-[#1a365d] hover:text-white transition-colors text-base"
+                            >
+                              {item}
+                            </a>
+                          ) : (
+                            <div
+                              key={idx}
+                              className="relative group"
+                              onMouseEnter={(e) => {
+                                e.stopPropagation();
+                                setActiveSubMenu(item.title);
+                              }}
+                              onMouseLeave={() => setActiveSubMenu(null)}
+                            >
+                              <a
+                                href={item.link}
+                                className="block px-8 py-3 text-gray-700 hover:bg-[#1a365d] hover:text-white transition-colors text-base flex items-center justify-between"
+                              >
+                                {item.title}
+                                {item.items && <FiChevronRight className="w-4 h-4" />}
+                              </a>
+                              {item.items && activeSubMenu === item.title && (
+                                <motion.div
+                                  initial={{ opacity: 0, x: 10 }}
+                                  animate={{ opacity: 1, x: 0 }}
+                                  exit={{ opacity: 0, x: 10 }}
+                                  className="absolute left-full top-0 w-72 bg-white rounded-lg shadow-xl py-3"
+                                >
+                                  {item.items.map((subItem, subIdx) => (
+                                    <a
+                                      key={subIdx}
+                                      href={subItem.link}
+                                      className="block px-8 py-3 text-gray-700 hover:bg-[#1a365d] hover:text-white transition-colors text-base"
+                                    >
+                                      {subItem.title}
+                                    </a>
+                                  ))}
+                                </motion.div>
+                              )}
+                            </div>
+                          )
                         ))}
                       </motion.div>
                     )}
@@ -170,14 +244,46 @@ export function Navbar() {
                             transition={{ duration: 0.2 }}
                             className="pl-4 space-y-2"
                           >
-                            {items.map((item) => (
-                              <a
-                                key={item}
-                                href="#"
-                                className="block py-3 text-gray-600 hover:text-[#1a365d] text-base"
-                              >
-                                {item}
-                              </a>
+                            {items.map((item, idx) => (
+                              typeof item === 'string' ? (
+                                <a
+                                  key={idx}
+                                  href="#"
+                                  className="block py-3 text-gray-600 hover:text-[#1a365d] text-base"
+                                >
+                                  {item}
+                                </a>
+                              ) : (
+                                <div key={idx}>
+                                  <button
+                                    onClick={() => setActiveSubMenu(activeSubMenu === item.title ? null : item.title)}
+                                    className="flex items-center justify-between w-full py-3 text-gray-600 hover:text-[#1a365d]"
+                                  >
+                                    <span>{item.title}</span>
+                                    {item.items && <FiChevronDown className={`w-4 h-4 transition-transform duration-200 ${
+                                      activeSubMenu === item.title ? 'rotate-180' : ''
+                                    }`} />}
+                                  </button>
+                                  {item.items && activeSubMenu === item.title && (
+                                    <motion.div
+                                      initial={{ opacity: 0, height: 0 }}
+                                      animate={{ opacity: 1, height: "auto" }}
+                                      exit={{ opacity: 0, height: 0 }}
+                                      className="pl-4 space-y-2"
+                                    >
+                                      {item.items.map((subItem, subIdx) => (
+                                        <a
+                                          key={subIdx}
+                                          href={subItem.link}
+                                          className="block py-2 text-gray-600 hover:text-[#1a365d] text-base"
+                                        >
+                                          {subItem.title}
+                                        </a>
+                                      ))}
+                                    </motion.div>
+                                  )}
+                                </div>
+                              )
                             ))}
                           </motion.div>
                         )}
@@ -218,4 +324,3 @@ export function Navbar() {
     </header>
   );
 }
-  

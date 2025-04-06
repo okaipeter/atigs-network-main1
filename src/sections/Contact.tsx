@@ -38,17 +38,17 @@ export function Contact() {
     {
       icon: <FiMapPin className="w-6 h-6" />,
       title: "Our Location",
-      details: ["123 Trade Avenue", "Business District", "New York, NY 10001"]
+      details: ["Accra ", "Business District", "Ghana Col, Gw0--220-22"]
     },
     {
       icon: <FiMail className="w-6 h-6" />,
       title: "Email Us",
-      details: ["info@tradecouncil.org", "support@tradecouncil.org"]
+      details: ["ayeapeter@gmailcom", "support@Atigsgroup.org"]
     },
     {
       icon: <FiPhone className="w-6 h-6" />,
       title: "Call Us",
-      details: ["+1 (555) 123-4567", "Mon - Fri, 9am - 6pm EST"]
+      details: ["+233 (555) 123-457", "Mon - Fri, 9am - 6pm GMT"]
     }
   ];
 
