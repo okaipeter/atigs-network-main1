@@ -2,8 +2,8 @@ import { FiSearch, FiChevronDown, FiChevronRight, FiMenu, FiX } from 'react-icon
 import logo from '../assets/logo_trans.png';
 import 'animate.css';
 import { motion, AnimatePresence } from "framer-motion";
-import { useState } from "react";
-import { Link } from 'react-router-dom';
+import { useState, useEffect } from "react";
+import { Link, useLocation } from 'react-router-dom';
 
 interface SubMenuItem {
   title: string;
@@ -45,11 +45,7 @@ const menuItems: Record<string, MenuSection> = {
           { title: "ATIGS Deal Marketplace", link: "/initiatives/deal-marketplace" },
           { title: "ATIGS Business Club", link: "/initiatives/business-club" },
           { title: "The ATIGS Times", link: "/initiatives/times" },
-<<<<<<< HEAD
           { title: "ATIGS FDI Shark Tank", link: "/initiatives/fdi-shark-tank" },
-=======
-          { title: "ATIGS FDI Shark Tank", link: "/initiatives/shark-tank" },
->>>>>>> 37e486ddbac474a89e2fd83db08550ca13662853
           { title: "ATIGS Advantage Seminar", link: "/initiatives/advantage-seminar" },
           { title: "ATIGS Soiree", link: "/initiatives/soiree" }
         ]
@@ -59,38 +55,6 @@ const menuItems: Record<string, MenuSection> = {
     ]
   },
   "How We Help": {
-<<<<<<< HEAD
-    items: [
-      { title: "Trade Services", link: "/services/trade-services" },
-      { title: "Market Access", link: "/services/market-access" },
-      { title: "Business Development", link: "/services/business-development" },
-      { title: "Training & Events", link: "/services/training-and-events" }
-    ]
-  },
-  "Resources": {
-    items: [
-      { title: "Trade Insights", link: "/resources/trade-insights" },
-      { title: "Market Reports", link: "/resources/market-reports" },
-      { title: "Industry News", link: "/resources/industry-news" },
-      { title: "Publications", link: "/resources/publications" }
-    ]
-  },
-  "News & Events": {
-    items: [
-      { title: "Latest News", link: "/news/latest-news" },
-      { title: "Upcoming Events", link: "/news/upcoming-events" },
-      { title: "Press Releases", link: "/news/press-releases" },
-      { title: "Media Gallery", link: "/news/media-gallery" }
-    ]
-  },
-  "Contact Us": {
-    items: [
-      { title: "Get in Touch", link: "/contact/get-in-touch" },
-      { title: "Office Locations", link: "/contact/office-locations" },
-      { title: "Support", link: "/contact/support" },
-      { title: "Careers", link: "/contact/careers" }
-    ]
-=======
     items: ["Trade Services", "Market Access", "Business Development", "Training & Events"]
   },
   "Resources": {
@@ -101,7 +65,6 @@ const menuItems: Record<string, MenuSection> = {
   },
   "Contact Us": {
     items: ["Get in Touch", "Office Locations", "Support", "Careers"]
->>>>>>> 37e486ddbac474a89e2fd83db08550ca13662853
   }
 };
 
@@ -109,6 +72,14 @@ export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
   const [activeSubMenu, setActiveSubMenu] = useState<string | null>(null);
+  const location = useLocation();
+
+  // Close dropdowns when route changes
+  useEffect(() => {
+    setActiveDropdown(null);
+    setActiveSubMenu(null);
+    setIsOpen(false);
+  }, [location.pathname]);
 
   const handleMouseEnter = (menu: string) => {
     setActiveDropdown(menu);
@@ -201,13 +172,6 @@ export function Navbar() {
                                     <Link
                                       key={subIdx}
                                       to={subItem.link}
-<<<<<<< HEAD
-                                      onClick={() => {
-                                        setActiveDropdown(null);
-                                        setActiveSubMenu(null);
-                                      }}
-=======
->>>>>>> 37e486ddbac474a89e2fd83db08550ca13662853
                                       className="block px-8 py-3 text-gray-700 hover:bg-[#1a365d] hover:text-white transition-colors text-base"
                                     >
                                       {subItem.title}
@@ -292,15 +256,6 @@ export function Navbar() {
                           >
                             {items.map((item, idx) => (
                               typeof item === 'string' ? (
-<<<<<<< HEAD
-                                <Link
-                                  key={idx}
-                                  to="#"
-                                  className="block py-3 text-gray-600 hover:text-[#1a365d] text-base"
-                                >
-                                  {item}
-                                </Link>
-=======
                                 <a
                                   key={idx}
                                   href="#"
@@ -308,7 +263,6 @@ export function Navbar() {
                                 >
                                   {item}
                                 </a>
->>>>>>> 37e486ddbac474a89e2fd83db08550ca13662853
                               ) : (
                                 <div key={idx}>
                                   <button
@@ -328,20 +282,6 @@ export function Navbar() {
                                       className="pl-4 space-y-2"
                                     >
                                       {item.items.map((subItem, subIdx) => (
-<<<<<<< HEAD
-                                        <Link
-                                          key={subIdx}
-                                          to={subItem.link}
-                                          onClick={() => {
-                                            setActiveDropdown(null);
-                                            setActiveSubMenu(null);
-                                            setIsOpen(false);
-                                          }}
-                                          className="block py-2 text-gray-600 hover:text-[#1a365d] text-base"
-                                        >
-                                          {subItem.title}
-                                        </Link>
-=======
                                         <a
                                           key={subIdx}
                                           href={subItem.link}
@@ -349,7 +289,6 @@ export function Navbar() {
                                         >
                                           {subItem.title}
                                         </a>
->>>>>>> 37e486ddbac474a89e2fd83db08550ca13662853
                                       ))}
                                     </motion.div>
                                   )}

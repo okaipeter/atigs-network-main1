@@ -66,20 +66,12 @@ export function Membership() {
               </form>
 
               <div className="mt-6 text-center">
-<<<<<<< HEAD
-                <Link to="/forgot-password" className="text-[#1a365d] hover:underline">Forgot Password?</Link>
-=======
                 <a href="#" className="text-[#1a365d] hover:underline">Forgot Password?</a>
->>>>>>> 37e486ddbac474a89e2fd83db08550ca13662853
               </div>
 
               <div className="mt-6 text-center">
                 <p className="text-gray-600">Don't have an account?</p>
-<<<<<<< HEAD
-                <Link to="/signup" className="text-[#1a365d] font-medium hover:underline">Create an account</Link>
-=======
                 <a href="#" className="text-[#1a365d] font-medium hover:underline">Create an account</a>
->>>>>>> 37e486ddbac474a89e2fd83db08550ca13662853
               </div>
             </motion.div>
 

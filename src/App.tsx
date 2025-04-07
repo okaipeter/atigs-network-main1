@@ -30,33 +30,10 @@ import { AtigsTradeShow } from './pages/initiatives/AtigsTradeShow';
 import { AtigsDealRoom } from './pages/initiatives/AtigsDealRoom';
 import { AtigsInvestorsSummit } from './pages/initiatives/AtigsInvestorsSummit';
 import { AtigsDealMarketplace } from './pages/initiatives/AtigsDealMarketplace';
-<<<<<<< HEAD
 import AtigsBusinessClub from './pages/initiatives/AtigsBusinessClub';
 import AtigsTimes from './pages/initiatives/AtigsTimes';
 import AtigsFdiSharkTank from './pages/initiatives/AtigsFdiSharkTank';
 import AtigsAdvantageSeminar from './pages/initiatives/AtigsAdvantageSeminar';
-import TradeServices from './pages/services/TradeServices';
-import MarketAccess from './pages/services/MarketAccess';
-import BusinessDevelopment from './pages/services/BusinessDevelopment';
-import TrainingAndEvents from './pages/services/TrainingAndEvents';
-import OurPurpose from './pages/OurPurpose';
-import OurWork from './pages/OurWork';
-import TradeInsights from './pages/resources/TradeInsights';
-import MarketReports from './pages/resources/MarketReports';
-import IndustryNews from './pages/resources/IndustryNews';
-import Publications from './pages/resources/Publications';
-import LatestNews from './pages/news/LatestNews';
-import UpcomingEvents from './pages/news/UpcomingEvents';
-import PressReleases from './pages/news/PressReleases';
-import MediaGallery from './pages/news/MediaGallery';
-import GetInTouch from './pages/contact/GetInTouch';
-import OfficeLocations from './pages/contact/OfficeLocations';
-import Support from './pages/contact/Support';
-import Careers from './pages/contact/Careers';
-import SignUp from './pages/auth/SignUp';
-import ForgotPassword from './pages/auth/ForgotPassword';
-=======
->>>>>>> 37e486ddbac474a89e2fd83db08550ca13662853
 
 function HomePage() {
   return (
@@ -97,45 +74,10 @@ function App() {
           <Route path="/initiatives/atigs-deal-room" element={<AtigsDealRoom />} />
           <Route path="/initiatives/investors-summit" element={<AtigsInvestorsSummit />} />
           <Route path="/initiatives/deal-marketplace" element={<AtigsDealMarketplace />} />
-<<<<<<< HEAD
           <Route path="/initiatives/business-club" element={<AtigsBusinessClub />} />
           <Route path="/initiatives/times" element={<AtigsTimes />} />
           <Route path="/initiatives/fdi-shark-tank" element={<AtigsFdiSharkTank />} />
           <Route path="/initiatives/advantage-seminar" element={<AtigsAdvantageSeminar />} />
-          
-          {/* Service Pages */}
-          <Route path="/services/trade-services" element={<TradeServices />} />
-          <Route path="/services/market-access" element={<MarketAccess />} />
-          <Route path="/services/business-development" element={<BusinessDevelopment />} />
-          <Route path="/services/training-and-events" element={<TrainingAndEvents />} />
-          
-          {/* What We Do Pages */}
-          <Route path="/purpose" element={<OurPurpose />} />
-          <Route path="/work" element={<OurWork />} />
-          
-          {/* Resource Pages */}
-          <Route path="/resources/trade-insights" element={<TradeInsights />} />
-          <Route path="/resources/market-reports" element={<MarketReports />} />
-          <Route path="/resources/industry-news" element={<IndustryNews />} />
-          <Route path="/resources/publications" element={<Publications />} />
-
-          {/* News & Events Routes */}
-          <Route path="/news/latest-news" element={<LatestNews />} />
-          <Route path="/news/upcoming-events" element={<UpcomingEvents />} />
-          <Route path="/news/press-releases" element={<PressReleases />} />
-          <Route path="/news/media-gallery" element={<MediaGallery />} />
-
-          {/* Contact Us Routes */}
-          <Route path="/contact/get-in-touch" element={<GetInTouch />} />
-          <Route path="/contact/office-locations" element={<OfficeLocations />} />
-          <Route path="/contact/support" element={<Support />} />
-          <Route path="/contact/careers" element={<Careers />} />
-
-          {/* Auth Routes */}
-          <Route path="/signup" element={<SignUp />} />
-          <Route path="/forgot-password" element={<ForgotPassword />} />
-=======
->>>>>>> 37e486ddbac474a89e2fd83db08550ca13662853
         </Routes>
         <Footer />
       </div>
