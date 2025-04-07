@@ -45,11 +45,7 @@ const menuItems: Record<string, MenuSection> = {
           { title: "ATIGS Deal Marketplace", link: "/initiatives/deal-marketplace" },
           { title: "ATIGS Business Club", link: "/initiatives/business-club" },
           { title: "The ATIGS Times", link: "/initiatives/times" },
-<<<<<<< HEAD
           { title: "ATIGS FDI Shark Tank", link: "/initiatives/fdi-shark-tank" },
-=======
-          { title: "ATIGS FDI Shark Tank", link: "/initiatives/shark-tank" },
->>>>>>> 37e486ddbac474a89e2fd83db08550ca13662853
           { title: "ATIGS Advantage Seminar", link: "/initiatives/advantage-seminar" },
           { title: "ATIGS Soiree", link: "/initiatives/soiree" }
         ]
@@ -59,7 +55,6 @@ const menuItems: Record<string, MenuSection> = {
     ]
   },
   "How We Help": {
-<<<<<<< HEAD
     items: [
       { title: "Trade Services", link: "/services/trade-services" },
       { title: "Market Access", link: "/services/market-access" },
@@ -90,18 +85,6 @@ const menuItems: Record<string, MenuSection> = {
       { title: "Support", link: "/contact/support" },
       { title: "Careers", link: "/contact/careers" }
     ]
-=======
-    items: ["Trade Services", "Market Access", "Business Development", "Training & Events"]
-  },
-  "Resources": {
-    items: ["Trade Insights", "Market Reports", "Industry News", "Publications"]
-  },
-  "News & Events": {
-    items: ["Latest News", "Upcoming Events", "Press Releases", "Media Gallery"]
-  },
-  "Contact Us": {
-    items: ["Get in Touch", "Office Locations", "Support", "Careers"]
->>>>>>> 37e486ddbac474a89e2fd83db08550ca13662853
   }
 };
 
@@ -201,13 +184,10 @@ export function Navbar() {
                                     <Link
                                       key={subIdx}
                                       to={subItem.link}
-<<<<<<< HEAD
                                       onClick={() => {
                                         setActiveDropdown(null);
                                         setActiveSubMenu(null);
                                       }}
-=======
->>>>>>> 37e486ddbac474a89e2fd83db08550ca13662853
                                       className="block px-8 py-3 text-gray-700 hover:bg-[#1a365d] hover:text-white transition-colors text-base"
                                     >
                                       {subItem.title}
@@ -292,7 +272,6 @@ export function Navbar() {
                           >
                             {items.map((item, idx) => (
                               typeof item === 'string' ? (
-<<<<<<< HEAD
                                 <Link
                                   key={idx}
                                   to="#"
@@ -300,15 +279,6 @@ export function Navbar() {
                                 >
                                   {item}
                                 </Link>
-=======
-                                <a
-                                  key={idx}
-                                  href="#"
-                                  className="block py-3 text-gray-600 hover:text-[#1a365d] text-base"
-                                >
-                                  {item}
-                                </a>
->>>>>>> 37e486ddbac474a89e2fd83db08550ca13662853
                               ) : (
                                 <div key={idx}>
                                   <button
@@ -328,7 +298,6 @@ export function Navbar() {
                                       className="pl-4 space-y-2"
                                     >
                                       {item.items.map((subItem, subIdx) => (
-<<<<<<< HEAD
                                         <Link
                                           key={subIdx}
                                           to={subItem.link}
@@ -341,15 +310,6 @@ export function Navbar() {
                                         >
                                           {subItem.title}
                                         </Link>
-=======
-                                        <a
-                                          key={subIdx}
-                                          href={subItem.link}
-                                          className="block py-2 text-gray-600 hover:text-[#1a365d] text-base"
-                                        >
-                                          {subItem.title}
-                                        </a>
->>>>>>> 37e486ddbac474a89e2fd83db08550ca13662853
                                       ))}
                                     </motion.div>
                                   )}

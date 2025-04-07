@@ -30,7 +30,7 @@ import { AtigsTradeShow } from './pages/initiatives/AtigsTradeShow';
 import { AtigsDealRoom } from './pages/initiatives/AtigsDealRoom';
 import { AtigsInvestorsSummit } from './pages/initiatives/AtigsInvestorsSummit';
 import { AtigsDealMarketplace } from './pages/initiatives/AtigsDealMarketplace';
-<<<<<<< HEAD
+
 import AtigsBusinessClub from './pages/initiatives/AtigsBusinessClub';
 import AtigsTimes from './pages/initiatives/AtigsTimes';
 import AtigsFdiSharkTank from './pages/initiatives/AtigsFdiSharkTank';
@@ -55,8 +55,7 @@ import Support from './pages/contact/Support';
 import Careers from './pages/contact/Careers';
 import SignUp from './pages/auth/SignUp';
 import ForgotPassword from './pages/auth/ForgotPassword';
-=======
->>>>>>> 37e486ddbac474a89e2fd83db08550ca13662853
+import VerifyOTP from './pages/auth/VerifyOTP';
 
 function HomePage() {
   return (
@@ -97,7 +96,7 @@ function App() {
           <Route path="/initiatives/atigs-deal-room" element={<AtigsDealRoom />} />
           <Route path="/initiatives/investors-summit" element={<AtigsInvestorsSummit />} />
           <Route path="/initiatives/deal-marketplace" element={<AtigsDealMarketplace />} />
-<<<<<<< HEAD
+
           <Route path="/initiatives/business-club" element={<AtigsBusinessClub />} />
           <Route path="/initiatives/times" element={<AtigsTimes />} />
           <Route path="/initiatives/fdi-shark-tank" element={<AtigsFdiSharkTank />} />
@@ -134,8 +133,8 @@ function App() {
           {/* Auth Routes */}
           <Route path="/signup" element={<SignUp />} />
           <Route path="/forgot-password" element={<ForgotPassword />} />
-=======
->>>>>>> 37e486ddbac474a89e2fd83db08550ca13662853
+          <Route path="/verify-otp" element={<VerifyOTP />} />
+
         </Routes>
         <Footer />
       </div>

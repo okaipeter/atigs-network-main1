@@ -1,17 +1,19 @@
 import { motion } from 'framer-motion';
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { FiMail, FiArrowLeft } from 'react-icons/fi';
 
 const ForgotPassword = () => {
   const [email, setEmail] = useState('');
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const navigate = useNavigate();
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle password reset request here
+    // Here you would send the reset password request to your backend
     console.log('Password reset requested for:', email);
-    setIsSubmitted(true);
+    // Navigate to OTP verification page with email
+    navigate('/verify-otp', { state: { email } });
   };
 
   return (
