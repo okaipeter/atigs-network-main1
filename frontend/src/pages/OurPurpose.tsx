@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 
 const OurPurpose = () => {
   const missionPoints = [
@@ -178,13 +179,15 @@ const OurPurpose = () => {
               <p className="text-xl text-gray-100 mb-8 max-w-2xl mx-auto">
                 Be part of our mission to drive economic growth and create opportunities across Africa
               </p>
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="px-8 py-4 bg-white text-[#1a365d] rounded-lg font-medium hover:bg-opacity-90 transition-all"
-              >
-                Become a Member
-              </motion.button>
+              <Link to="/membership">
+                <motion.button
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  className="px-8 py-4 bg-white text-[#1a365d] rounded-lg font-medium hover:bg-opacity-90 transition-all"
+                >
+                  Become a Member
+                </motion.button>
+              </Link>
             </div>
           </div>
         </motion.div>

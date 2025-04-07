@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 
 const TradeServices = () => {
   const services = [
@@ -117,13 +118,15 @@ const TradeServices = () => {
               <p className="text-gray-600 group-hover:text-gray-700 transition-colors">
                 {service.description}
               </p>
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="mt-6 px-4 py-2 bg-gradient-to-r from-blue-500/10 to-purple-500/10 text-[#1a365d] rounded-lg font-medium group-hover:from-blue-500/20 group-hover:to-purple-500/20 transition-all duration-300"
-              >
-                Learn More
-              </motion.button>
+              <Link to="/contact/get-in-touch">
+                <motion.button
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  className="mt-6 px-4 py-2 bg-gradient-to-r from-blue-500/10 to-purple-500/10 text-[#1a365d] rounded-lg font-medium group-hover:from-blue-500/20 group-hover:to-purple-500/20 transition-all duration-300"
+                >
+                  Learn More
+                </motion.button>
+              </Link>
             </motion.div>
           ))}
         </motion.div>
@@ -157,30 +160,34 @@ const TradeServices = () => {
               Let us help you navigate the complexities of international trade and unlock new opportunities.
             </p>
             <div className="flex flex-wrap gap-4 justify-center">
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="group px-8 py-4 bg-white text-[#1a365d] rounded-lg font-medium transition-all duration-300 hover:bg-opacity-90 hover:shadow-lg"
-              >
-                <span className="relative">
-                  Get Started
-                  <motion.span
-                    className="absolute bottom-0 left-0 w-0 h-0.5 bg-[#1a365d] group-hover:w-full transition-all duration-300"
-                  />
-                </span>
-              </motion.button>
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="group px-8 py-4 bg-transparent border-2 border-white text-white rounded-lg font-medium transition-all duration-300 hover:bg-white hover:text-[#1a365d]"
-              >
-                <span className="relative">
-                  Contact Us
-                  <motion.span
-                    className="absolute bottom-0 left-0 w-0 h-0.5 bg-white group-hover:bg-[#1a365d] group-hover:w-full transition-all duration-300"
-                  />
-                </span>
-              </motion.button>
+              <Link to="/signup">
+                <motion.button
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  className="group px-8 py-4 bg-white text-[#1a365d] rounded-lg font-medium transition-all duration-300 hover:bg-opacity-90 hover:shadow-lg"
+                >
+                  <span className="relative">
+                    Get Started
+                    <motion.span
+                      className="absolute bottom-0 left-0 w-0 h-0.5 bg-[#1a365d] group-hover:w-full transition-all duration-300"
+                    />
+                  </span>
+                </motion.button>
+              </Link>
+              <Link to="/contact/get-in-touch">
+                <motion.button
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  className="group px-8 py-4 bg-transparent border-2 border-white text-white rounded-lg font-medium transition-all duration-300 hover:bg-white hover:text-[#1a365d]"
+                >
+                  <span className="relative">
+                    Contact Us
+                    <motion.span
+                      className="absolute bottom-0 left-0 w-0 h-0.5 bg-white group-hover:bg-[#1a365d] group-hover:w-full transition-all duration-300"
+                    />
+                  </span>
+                </motion.button>
+              </Link>
             </div>
           </div>
         </motion.div>
