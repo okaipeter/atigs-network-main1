@@ -8,9 +8,14 @@ export default defineConfig({
   base: '/',
   build: {
     outDir: 'dist',
+    chunkSizeWarningLimit: 1000,
     rollupOptions: {
       output: {
-        manualChunks: undefined
+        manualChunks: {
+          vendor: ['react', 'react-dom', 'react-router-dom'],
+          ui: ['@radix-ui/react-slot', '@shadcn/ui', 'class-variance-authority', 'clsx', 'lucide-react'],
+          animations: ['framer-motion', 'animate.css']
+        }
       }
     }
   },

@@ -4,6 +4,7 @@ import brand2 from "../assets/brand2.jpg";
 import brand3 from "../assets/brand3.jpg";
 import brand4 from "../assets/brand4.jpg";
 import brand5 from "../assets/brand5.jpg";
+import brand6 from "../assets/brand6.jpg";
 
 export function OurBrand() {
   const brandLogos = [
@@ -31,6 +32,11 @@ export function OurBrand() {
       name: "Brand 5",
       logo: brand5,
       description: "Global market leader",
+    },
+    {
+      name: "Brand 6",
+      logo: brand6,
+      description: "Strategic business partner",
     }
   ];
 
