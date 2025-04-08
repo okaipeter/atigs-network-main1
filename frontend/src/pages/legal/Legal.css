@@ -1,0 +1,85 @@
+.legal-page {
+  padding: 2rem 0;
+  background-color: #f8f9fa;
+  min-height: 100vh;
+}
+
+.legal-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  background-color: #ffffff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+}
+
+.legal-container h1 {
+  color: #1a1a1a;
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+
+.last-updated {
+  color: #666;
+  font-size: 1rem;
+  margin-bottom: 2rem;
+  font-style: italic;
+}
+
+.legal-container section {
+  margin-bottom: 2.5rem;
+}
+
+.legal-container h2 {
+  color: #2c3e50;
+  font-size: 1.75rem;
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+.legal-container h3 {
+  color: #34495e;
+  font-size: 1.25rem;
+  margin: 1.5rem 0 1rem;
+  font-weight: 600;
+}
+
+.legal-container p {
+  color: #4a4a4a;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+  font-size: 1rem;
+}
+
+.legal-container ul {
+  list-style-type: disc;
+  margin-left: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.legal-container li {
+  color: #4a4a4a;
+  line-height: 1.6;
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+}
+
+@media (max-width: 768px) {
+  .legal-container {
+    padding: 1.5rem;
+    margin: 0 1rem;
+  }
+
+  .legal-container h1 {
+    font-size: 2rem;
+  }
+
+  .legal-container h2 {
+    font-size: 1.5rem;
+  }
+
+  .legal-container h3 {
+    font-size: 1.25rem;
+  }
+} 
