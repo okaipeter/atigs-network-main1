@@ -306,15 +306,25 @@ export function Navbar() {
                                 </Link>
                               ) : (
                                 <div key={idx}>
-                                  <button
-                                    onClick={() => handleMobileSubMenuClick(item)}
-                                    className="flex items-center justify-between w-full py-3 text-gray-600 hover:text-[#1a365d]"
-                                  >
-                                    <span>{item.title}</span>
-                                    {item.items && <FiChevronDown className={`w-4 h-4 transition-transform duration-200 ${
-                                      activeSubMenu === item.title ? 'rotate-180' : ''
-                                    }`} />}
-                                  </button>
+                                  {item.link ? (
+                                    <Link
+                                      to={item.link}
+                                      onClick={handleMobileLinkClick}
+                                      className="flex items-center justify-between w-full py-3 text-gray-600 hover:text-[#1a365d]"
+                                    >
+                                      <span>{item.title}</span>
+                                    </Link>
+                                  ) : (
+                                    <button
+                                      onClick={() => handleMobileSubMenuClick(item)}
+                                      className="flex items-center justify-between w-full py-3 text-gray-600 hover:text-[#1a365d]"
+                                    >
+                                      <span>{item.title}</span>
+                                      {item.items && <FiChevronDown className={`w-4 h-4 transition-transform duration-200 ${
+                                        activeSubMenu === item.title ? 'rotate-180' : ''
+                                      }`} />}
+                                    </button>
+                                  )}
                                   {item.items && activeSubMenu === item.title && (
                                     <motion.div
                                       initial={{ opacity: 0, height: 0 }}
